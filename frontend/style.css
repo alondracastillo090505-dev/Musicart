@@ -1,0 +1,119 @@
+:root {
+    --bg-negro: #030303;        
+    --card-bg: #121212;       
+    --rojo-yt: #ff0000;        
+    --rojo-hover: #cc0000;     
+    --texto-blanco: #ffffff;
+    --texto-gris: #aaaaaa;
+}
+
+body {
+    background-color: var(--bg-negro);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    color: var(--texto-blanco);
+}
+
+.login-container {
+    background-color: var(--card-bg);
+    padding: 50px 40px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1); 
+    width: 340px;
+    text-align: center;
+}
+
+h2 { 
+    color: var(--texto-blanco); 
+    margin-bottom: 35px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.input-group { 
+    text-align: left; 
+    margin-bottom: 20px; 
+}
+
+label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--texto-gris);
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background-color: #212121; 
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+input:focus { 
+    border-color: var(--rojo-yt); 
+    background-color: #2a2a2a;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--rojo-yt);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--rojo-hover);
+}
+
+.divider { 
+    margin: 20px 0; 
+    color: var(--texto-gris); 
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+/* Líneas a los lados del "ó" */
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #333;
+    margin: 0 10px;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: var(--rojo-yt);
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--rojo-yt);
+    background-color: rgba(255, 0, 0, 0.05);
+}
