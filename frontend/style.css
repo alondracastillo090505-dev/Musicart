@@ -1,119 +1,236 @@
 :root {
-    --bg-negro: #030303;        
-    --card-bg: #121212;       
-    --rojo-yt: #ff0000;        
-    --rojo-hover: #cc0000;     
+
+    --bg-negro: #0b0b0b;
+    --card-bg: #181818;
+
+    --rojo-principal: #ff1e1e;
+    --rojo-secundario: #c40000;
+    --rojo-brillo: #ff4d4d;
+
     --texto-blanco: #ffffff;
-    --texto-gris: #aaaaaa;
+    --texto-gris: #b3b3b3;
+
 }
 
 body {
-    background-color: var(--bg-negro);
+
+    background:
+    linear-gradient(to bottom, #140000, #050505);
+
     height: 100vh;
+
     margin: 0;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    font-family: 'Roboto', 'Segoe UI', sans-serif;
+
+    font-family: 'Segoe UI', sans-serif;
+
     color: var(--texto-blanco);
+
 }
 
 .login-container {
+
     background-color: var(--card-bg);
+
     padding: 50px 40px;
-    border-radius: 8px; 
-    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1); 
-    width: 340px;
+
+    border-radius: 18px;
+
+    width: 360px;
+
     text-align: center;
+
+    border: 1px solid rgba(255, 0, 0, 0.2);
+
+    box-shadow:
+    0 0 30px rgba(255, 0, 0, 0.15);
+
+    backdrop-filter: blur(5px);
+
 }
 
-h2 { 
-    color: var(--texto-blanco); 
+h2 {
+
+    color: var(--texto-blanco);
+
     margin-bottom: 35px;
+
+    font-size: 28px;
+
     font-weight: 700;
-    letter-spacing: -0.5px;
+
+    letter-spacing: 1px;
+
 }
 
-.input-group { 
-    text-align: left; 
-    margin-bottom: 20px; 
+.input-group {
+
+    text-align: left;
+
+    margin-bottom: 22px;
+
 }
 
 label {
+
     display: block;
+
     font-size: 11px;
+
     text-transform: uppercase;
-    letter-spacing: 1px;
+
+    letter-spacing: 2px;
+
     color: var(--texto-gris);
+
     margin-bottom: 8px;
+
 }
 
 input {
+
     width: 100%;
-    padding: 12px;
-    background-color: #212121; 
+
+    padding: 14px;
+
+    background-color: #242424;
+
     border: 1px solid #333;
-    border-radius: 4px;
+
+    border-radius: 10px;
+
     color: white;
+
     outline: none;
+
     transition: 0.3s;
+
     box-sizing: border-box;
+
+    font-size: 14px;
+
 }
 
-input:focus { 
-    border-color: var(--rojo-yt); 
-    background-color: #2a2a2a;
+input:focus {
+
+    border-color: var(--rojo-principal);
+
+    box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.3);
+
+    background-color: #2b2b2b;
+
 }
 
 .btn-primary {
+
     width: 100%;
+
     padding: 14px;
-    background-color: var(--rojo-yt);
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--rojo-principal),
+        var(--rojo-secundario)
+    );
+
     color: white;
+
     border: none;
-    border-radius: 4px;
+
+    border-radius: 10px;
+
     font-weight: bold;
+
     font-size: 14px;
+
     cursor: pointer;
+
     margin-top: 10px;
+
     text-transform: uppercase;
+
     transition: 0.3s;
+
+    letter-spacing: 1px;
+
 }
 
 .btn-primary:hover {
-    background-color: var(--rojo-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 6px 15px rgba(255, 0, 0, 0.3);
+
 }
 
-.divider { 
-    margin: 20px 0; 
-    color: var(--texto-gris); 
+.divider {
+
+    margin: 22px 0;
+
+    color: var(--texto-gris);
+
     font-size: 12px;
+
     display: flex;
+
     align-items: center;
+
 }
 
-/* Líneas a los lados del "ó" */
-.divider::before, .divider::after {
+.divider::before,
+.divider::after {
+
     content: "";
+
     flex: 1;
+
     height: 1px;
+
     background: #333;
+
     margin: 0 10px;
+
 }
 
 .btn-secondary {
+
     width: 100%;
-    padding: 12px;
+
+    padding: 13px;
+
     background: transparent;
-    color: var(--rojo-yt);
-    border: 1px solid #333;
-    border-radius: 4px;
+
+    color: var(--rojo-principal);
+
+    border: 1px solid #444;
+
+    border-radius: 10px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.3s;
+
+    letter-spacing: 1px;
+
 }
 
 .btn-secondary:hover {
-    border-color: var(--rojo-yt);
-    background-color: rgba(255, 0, 0, 0.05);
+
+    border-color: var(--rojo-principal);
+
+    background-color:
+    rgba(255, 0, 0, 0.08);
+
+    transform: translateY(-2px);
+
 }

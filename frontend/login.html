@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicart - Iniciar Sesión</title>
+    <title>MusicArt</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="js/login.js"></script>
 </head>
+
 <body>
+
     <div class="login-container">
+
         <form class="login-form">
-            <h2>Bienvenida a Musicart</h2>
+
+            <h2>Bienvenida a MusicArt</h2>
 
             <div class="input-group">
-                <label for="usuario">Usuario</label>
+                <label>Usuario</label>
                 <input type="text" id="usuario" required>
             </div>
 
             <div class="input-group">
-                <label for="password">Password</label>
+                <label>Password</label>
                 <input type="password" id="password" required>
             </div>
 
-            <button type="submit" class="btn-primary">Entrar</button>
-            
+            <button type="submit" class="btn-primary">
+                Entrar
+            </button>
+
             <div class="divider">ó</div>
-            
-            <button type="button" class="btn-secondary">Crear sesión</button>
+
+            <button
+                type="button"
+                class="btn-secondary"
+                onclick="window.location.href='registro.html'"
+            >
+                Crear cuenta
+            </button>
+
         </form>
+
     </div>
 </body>
+
 </html>
