@@ -49,3 +49,16 @@ async function obtenerMusica() {
 }
 
 obtenerMusica();
+
+function cerrarSesion(){
+
+    alert("Sesión cerrada");
+
+    setTimeout(() => {
+
+        window.location.href =
+        "login.html";
+
+    }, 1000);
+
+}
