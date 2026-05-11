@@ -2,49 +2,146 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>MusicArt</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="js/login.js"></script>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login MusicArt</title>
+
+    <style>
+
+        body {
+
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #140000, #050505);
+            font-family: Arial, sans-serif;
+
+        }
+
+        .login {
+
+            width: 350px;
+            background-color: #181818;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255,0,0,0.3);
+
+        }
+
+        h1 {
+
+            color: #ff2b2b;
+            margin-bottom: 30px;
+
+        }
+
+        input {
+
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+
+        }
+
+        button {
+
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff1e1e;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+
+        p {
+
+            color: white;
+            margin-top: 15px;
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-    <div class="login-container">
+    <div class="login">
 
-        <form class="login-form">
+        <h1>🎵 MusicArt</h1>
 
-            <h2>Bienvenida a MusicArt</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
 
-            <div class="input-group">
-                <label>Usuario</label>
-                <input type="text" id="usuario" required>
-            </div>
+        <input type="password" id="password" placeholder="Contraseña">
 
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="password" required>
-            </div>
+        <button onclick="iniciarSesion()">
+            Iniciar Sesión
+        </button>
 
-            <button type="submit" class="btn-primary">
-                Entrar
-            </button>
-
-            <div class="divider">ó</div>
-
-            <button
-                type="button"
-                class="btn-secondary"
-                onclick="window.location.href='registro.html'"
-            >
-                Crear cuenta
-            </button>
-
-        </form>
+        <p id="mensaje"></p>
 
     </div>
-    <script src="js/login.js"></script>
+
+    <script>
+
+        async function iniciarSesion() {
+
+            const usuario =
+            document.getElementById("usuario").value;
+
+            const password =
+            document.getElementById("password").value;
+
+            const mensaje =
+            document.getElementById("mensaje");
+
+            const respuesta = await fetch(
+                "http://localhost:3000/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        usuario,
+                        password
+                    })
+                }
+            );
+
+            const datos = await respuesta.json();
+
+            if(datos.acceso){
+
+                window.location.href =
+                "dashboard.html";
+
+            } else {
+
+                mensaje.innerHTML =
+                "Usuario o contraseña incorrectos";
+
+            }
+
+        }
+
+    </script>
+
 </body>
 
 </html>

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (data.success === true) {
 
-                // 🔥 AQUÍ ABRE DASHBOARD
+                //  AQUÍ ABRE DASHBOARD
                 window.location.href = "dashboard.html";
 
             } else {
